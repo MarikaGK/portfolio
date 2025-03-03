@@ -1,0 +1,45 @@
+{
+  "pl": [
+    {
+      "id": 1,
+      "title": "Squadka.pl",
+      "description": "Nowoczesny asystent do zarządzania finansami przez użytkowników prywatnych, np. składki klasowe, zbiórki urodzinowe i wiele innych.",
+      "tags": [
+        "Vue.js",
+        "Vuetify",
+        "Tailwind CSS",
+        "Pinia",
+        "Express.js",
+        "MongoDB"
+      ],
+      "image": "/img/project1.jpg",
+      "link": "https://squadka.pl"
+    },
+    {
+      "id": 2,
+      "title": "PairPlay",
+      "description": "Karciana gra erotyczna dla par, która tworzy nowe doświadczenia seksualne oraz pozwala na zbudowanie lepszych relacji.",
+      "tags": ["T3", "Next.js", "Tailwind CSS", "tRPC", "Prisma", "MongoDB"],
+      "image": "/img/project2.jpg",
+      "link": "https://pairplay.fun"
+    }
+  ],
+  "en": [
+    {
+      "id": 1,
+      "title": "E-commerce Dashboard",
+      "description": "Modern admin dashboard for e-commerce platform with data analysis and product management.",
+      "tags": ["Vue.js", "Tailwind CSS", "Firebase"],
+      "image": "/img/project1.jpg",
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "title": "Photographer Portfolio",
+      "description": "Minimalist portfolio website for a professional photographer with photo galleries and booking system.",
+      "tags": ["React", "GSAP", "Strapi CMS"],
+      "image": "/img/project2.jpg",
+      "link": "#"
+    }
+  ]
+}

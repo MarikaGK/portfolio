@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #6799fe;
+  --color-secondary: #0255fb;
+  --color-bg: #0f0f0f;
+  --color-text: #f2f2f2;
+}
+
+body {
+  @apply bg-black text-white;
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-heading;
+}
+
+.glass-panel {
+  @apply bg-glass-bg border border-glass-border rounded-xl backdrop-blur-md;
+}
+
+.section-heading {
+  @apply text-4xl font-bold mb-8 text-center font-heading;
+}
+
+.section {
+  @apply py-20;
+}

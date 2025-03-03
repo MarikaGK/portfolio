@@ -1,0 +1,44 @@
+{
+  "header": {
+    "home": "Home",
+    "projects": "Projects",
+    "skills": "Skills",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Marika Groenke-Kurpios",
+    "subtitle": "Full Stack Software Engineer",
+    "description": "I create modern web applications that combine aesthetics with functionality. I specialize in React, Vue and JavaScript, with a passion for creating user interfaces.",
+    "buttons": {
+      "projects": "See Projects",
+      "downloadCV": "Download CV",
+      "contact": "Contact"
+    }
+  },
+  "projects": {
+    "title": "My Projects"
+  },
+  "skills": {
+    "title": "Skills",
+    "technical": "Technical Skills",
+    "soft": "Soft Skills"
+  },
+  "about": {
+    "title": "About Me",
+    "bio": "I am a front-end developer with a passion for creating interactive and responsive user interfaces. I'm a computer science graduate with a love for digital art."
+  },
+  "contact": {
+    "title": "Contact",
+    "form": {
+      "name": "Full Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent! Thank you for contacting me.",
+      "error": "An error occurred while sending the message. Please try again later."
+    }
+  }
+}

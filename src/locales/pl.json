@@ -1,0 +1,44 @@
+{
+  "header": {
+    "home": "Strona główna",
+    "projects": "Projekty",
+    "skills": "Umiejętności",
+    "about": "O mnie",
+    "contact": "Kontakt"
+  },
+  "home": {
+    "title": "Marika Groenke-Kurpios",
+    "subtitle": "Full Stack Software Engineer",
+    "description": "Tworzę nowoczesne aplikacje webowe, które łączą estetykę z funkcjonalnością. Specjalizuję się w React, Vue i JavaScript, z pasją do tworzenia interfejsów użytkownika.",
+    "buttons": {
+      "projects": "Zobacz projekty",
+      "downloadCV": "Pobierz CV",
+      "contact": "Kontakt"
+    }
+  },
+  "projects": {
+    "title": "Moje Projekty"
+  },
+  "skills": {
+    "title": "Umiejętności",
+    "technical": "Umiejętności techniczne",
+    "soft": "Umiejętności miękkie"
+  },
+  "about": {
+    "title": "O mnie",
+    "bio": "Jestem front-end developerem z pasją do tworzenia interaktywnych i responsywnych interfejsów użytkownika. Z wykształcenia informatyk, z zamiłowania artysta cyfrowy."
+  },
+  "contact": {
+    "title": "Kontakt",
+    "form": {
+      "name": "Imię i nazwisko",
+      "email": "Email",
+      "subject": "Temat",
+      "message": "Wiadomość",
+      "submit": "Wyślij wiadomość",
+      "sending": "Wysyłanie...",
+      "success": "Wiadomość została wysłana! Dziękuję za kontakt.",
+      "error": "Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie później."
+    }
+  }
+}
