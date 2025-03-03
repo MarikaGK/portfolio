@@ -155,7 +155,7 @@ const downloadCV = () => {
   console.log(`Pobieranie CV: ${cvFilename}`);
 
   const link = document.createElement("a");
-  link.href = `/${cvFilename}`;
+  link.href = `${import.meta.env.BASE_URL}${cvFilename}`;
   link.download = cvFilename;
   document.body.appendChild(link);
   link.click();
