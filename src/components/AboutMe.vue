@@ -69,7 +69,7 @@
         class="glass-panel overflow-hidden aspect-square rounded-full mx-auto max-w-[300px] relative"
       >
         <img
-          :src="'/img/profile.jpg'"
+          :src="'/portfolio/img/profile.jpg'"
           alt="Profile"
           class="w-full h-full object-cover"
           @error="handleImageError"
@@ -88,7 +88,7 @@
 <script setup>
 function handleImageError(event) {
   console.warn("Nie można załadować obrazu profilu");
-  event.target.src = "/img/profile.JPG";
+  event.target.src = "/portfolio/img/profile.JPG";
 
   event.onerror = function () {
     event.target.src =
