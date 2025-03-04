@@ -5,6 +5,7 @@ import ProjectScroller from "../components/ProjectScroller.vue";
 import SkillsGrid from "../components/SkillsGrid.vue";
 import AboutMe from "../components/AboutMe.vue";
 import ContactForm from "../components/ContactForm.vue";
+import DebugInfo from "../components/DebugInfo.vue";
 
 // Import danych z JSON
 import projectsData from "../data/projects.json";
@@ -41,6 +42,7 @@ const downloadCV = () => {
 
 <template>
   <main>
+    <DebugInfo />
     <section
       id="home"
       class="min-h-screen flex items-center justify-center relative overflow-hidden"

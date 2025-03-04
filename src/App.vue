@@ -1,18 +1,33 @@
 <script setup>
+import { onMounted } from "vue";
 import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
+
+onMounted(() => {
+  console.log("App załadowana");
+  // Możesz dodać więcej loggera dla debugowania
+  setTimeout(() => {
+    const sections = document.querySelectorAll("section");
+    console.log("Liczba sekcji:", sections.length);
+    sections.forEach((section, i) => {
+      console.log(`Sekcja ${i}:`, section.id, section.offsetHeight);
+    });
+  }, 1000);
+});
 </script>
 
 <template>
-  <div class="app-container">
-    <div class="bg-grid"></div>
-    <Navbar />
-    <router-view v-slot="{ Component }">
-      <transition name="fade" mode="out-in">
-        <component :is="Component" />
-      </transition>
-    </router-view>
-    <Footer />
+  <div id="app">
+    <!-- Sprawdź, czy wszystko jest poprawnie renderowane -->
+    <header>
+      <!-- Navbar -->
+    </header>
+
+    <router-view></router-view>
+
+    <footer>
+      <!-- Footer -->
+    </footer>
   </div>
 </template>
 
