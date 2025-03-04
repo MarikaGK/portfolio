@@ -66,23 +66,36 @@
 
     <div class="relative order-1 md:order-2">
       <div
-        class="glass-panel overflow-hidden aspect-square rounded-full mx-auto max-w-[300px]"
+        class="glass-panel overflow-hidden aspect-square rounded-full mx-auto max-w-[300px] relative"
       >
         <img
-          src="/img/profile.jpg"
+          :src="'/img/profile.jpg'"
           alt="Profile"
           class="w-full h-full object-cover"
+          @error="handleImageError"
         />
+        <div
+          class="absolute inset-0 bg-black/15 hover:bg-black/10 transition-colors duration-300"
+        ></div>
       </div>
       <div
-        class="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-r from-blue-500 to-purple-600 rounded-full opacity-20 blur-3xl"
+        class="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-r to-violet-700 from-pink-400 rounded-full opacity-20 blur-3xl"
       ></div>
     </div>
   </div>
 </template>
 
 <script setup>
-// Możesz dodać tutaj logikę, jeśli będzie potrzebna
+function handleImageError(event) {
+  console.warn("Nie można załadować obrazu profilu");
+  event.target.src = "/img/profile.JPG";
+
+  event.onerror = function () {
+    event.target.src =
+      "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMzMzIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSI+UHJvZmlsZSBJbWFnZTwvdGV4dD48L3N2Zz4=";
+    event.onerror = null;
+  };
+}
 </script>
 
 <style scoped>

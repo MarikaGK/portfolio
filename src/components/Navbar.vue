@@ -4,7 +4,7 @@
     <div class="container mx-auto px-4 py-4 relative z-10">
       <div class="flex justify-between items-center">
         <div class="logo">
-          <a href="#" class="text-xl font-bold">{{ $t("header.title") }}</a>
+          <a href="#" class="text-xl font-thin">{{ $t("header.title") }}</a>
         </div>
         <nav class="hidden md:block">
           <ul class="flex gap-8">

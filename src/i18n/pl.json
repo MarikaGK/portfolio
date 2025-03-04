@@ -1,0 +1,128 @@
+{
+  "header": {
+    "title": "MariGK",
+    "home": "Strona główna",
+    "projects": "Projekty",
+    "about": "O mnie",
+    "contact": "Kontakt",
+    "skills": "Umiejętności",
+    "description": "Portfolio Full Stack Software Engineer",
+    "lang": "Język"
+  },
+  "projects": {
+    "title": "Projekty",
+    "viewProject": "Zobacz projekt",
+    "category": "Kategoria",
+    "technologies": "Technologie",
+    "viewLive": "Zobacz na żywo",
+    "viewCode": "Zobacz kod",
+    "all": "Wszystkie",
+    "filterBy": "Filtruj według kategorii",
+    "projectsButton": "Wszystkie projekty",
+    "detailsButton": "Szczegóły projektu"
+  },
+  "nav": {
+    "home": "Strona główna",
+    "projects": "Projekty",
+    "about": "O mnie",
+    "contact": "Kontakt",
+    "skills": "Umiejętności"
+  },
+  "skills": {
+    "title": "Umiejętności",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "database": "Bazy danych",
+    "tools": "Narzędzia",
+    "cloud": "Chmura",
+    "other": "Inne",
+    "soft": "Umiejętności miękkie",
+    "technical": "Umiejętności techniczne",
+    "languages": "Języki programowania",
+    "frameworks": "Frameworki",
+    "design": "Projektowanie",
+    "devops": "DevOps",
+    "mobile": "Rozwój mobilny",
+    "testing": "Testowanie",
+    "management": "Zarządzanie",
+    "collaboration": "Współpraca",
+    "communication": "Komunikacja",
+    "levelBeginner": "Początkujący",
+    "levelIntermediate": "Średniozaawansowany",
+    "levelAdvanced": "Zaawansowany",
+    "levelExpert": "Ekspert",
+    "showAll": "Pokaż wszystkie",
+    "showLess": "Pokaż mniej",
+    "levels": {
+      "1": "Podstawowy",
+      "2": "Średniozaawansowany",
+      "3": "Zaawansowany",
+      "4": "Ekspert",
+      "5": "Mistrz"
+    }
+  },
+  "about": {
+    "title": "O mnie",
+    "content": "Jestem Full Stack Software Engineer z doświadczeniem w tworzeniu kompleksowych rozwiązań cyfrowych. Pracuję zarówno z technologiami front-endowymi jak i back-endowymi, dbając o wysoką jakość każdej warstwy aplikacji.",
+    "experience": "Doświadczenie",
+    "education": "Wykształcenie",
+    "interests": "Zainteresowania",
+    "readMore": "Czytaj więcej",
+    "showLess": "Pokaż mniej"
+  },
+  "experience": {
+    "title": "Doświadczenie",
+    "years": "lat doświadczenia",
+    "projects": "ukończonych projektów",
+    "clients": "zadowolonych klientów"
+  },
+  "buttons": {
+    "contactMe": "Skontaktuj się ze mną",
+    "downloadCV": "Pobierz CV",
+    "viewProjects": "Zobacz projekty",
+    "learnMore": "Dowiedz się więcej",
+    "hireMeNow": "Zatrudnij mnie",
+    "seePortfolio": "Zobacz portfolio",
+    "readMore": "Czytaj więcej",
+    "getInTouch": "Skontaktuj się",
+    "sendMessage": "Wyślij wiadomość",
+    "submitForm": "Wyślij formularz"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "description": "Jeśli masz pytania lub chcesz nawiązać współpracę, skontaktuj się ze mną.",
+    "form": {
+      "name": "Imię i nazwisko",
+      "email": "E-mail",
+      "message": "Wiadomość",
+      "send": "Wyślij wiadomość",
+      "subject": "Temat"
+    },
+    "success": "Wiadomość została wysłana. Dziękuję!",
+    "error": "Przepraszam, wystąpił błąd. Spróbuj ponownie.",
+    "info": {
+      "email": "E-mail",
+      "phone": "Telefon",
+      "address": "Lokalizacja"
+    },
+    "buttonSend": "Wyślij"
+  },
+  "footer": {
+    "copyright": "© 2023 Marika Groenke-Kurpios. Wszelkie prawa zastrzeżone.",
+    "socialMedia": "Media społecznościowe"
+  },
+  "home": {
+    "title_p1": "Przekształćmy Twoje",
+    "title_high1": "pomysły",
+    "title_p2": "w cyfrową",
+    "title_high2": "rzeczywistość",
+    "subtitle": "Marika Groenke-Kurpios - Full Stack Software Engineer",
+    "description": "Tworzę kompleksowe aplikacje webowe, od interfejsu użytkownika po bazę danych i infrastrukturę serwerową.",
+    "cta": "Zobacz moje projekty",
+    "buttons": {
+      "projects": "Projekty",
+      "downloadCV": "Pobierz CV",
+      "contact": "Kontakt"
+    }
+  }
+}

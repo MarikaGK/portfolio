@@ -1,3 +1,44 @@
+<script setup>
+import { ref, computed, onMounted } from "vue";
+import { useI18n } from "vue-i18n";
+import ProjectScroller from "../components/ProjectScroller.vue";
+import SkillsGrid from "../components/SkillsGrid.vue";
+import AboutMe from "../components/AboutMe.vue";
+import ContactForm from "../components/ContactForm.vue";
+
+// Import danych z JSON
+import projectsData from "../data/projects.json";
+import skillsData from "../data/skills.json";
+
+const { t, locale } = useI18n();
+
+// Dynamiczne pobieranie danych w zależności od języka
+const projects = computed(() => {
+  return projectsData[locale.value] || projectsData.en;
+});
+
+// Umiejętności techniczne
+const technicalSkills = computed(() => skillsData.technical);
+const softSkills = computed(() => skillsData.soft);
+
+// Funkcja do pobierania CV
+const downloadCV = () => {
+  const cvFilename =
+    locale.value === "pl"
+      ? "CV_Marika_Groenke_Kurpios.pdf"
+      : "CV_Marika_Groenke_Kurpios_EN.pdf";
+
+  console.log(`Pobieranie CV: ${cvFilename}`);
+
+  const link = document.createElement("a");
+  link.href = `/${cvFilename}`;
+  link.download = cvFilename;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+</script>
+
 <template>
   <main>
     <section
@@ -30,16 +71,23 @@
       </div>
 
       <div class="container mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6">
-          {{ $t("home.title") }}
+        <h1 class="text-2xl md:text-5xl font-medium mb-6">
+          {{ $t("home.title_p1") }}
+          <span class="gradient-text-pink">{{ $t("home.title_high1") }}</span>
         </h1>
-        <h2 class="text-xl md:text-3xl text-white/80 mb-8">
+        <h1 class="text-2xl md:text-5xl font-medium mb-6">
+          {{ $t("home.title_p2") }}
+          <span class="gradient-text-purple shimmer-effect">{{
+            $t("home.title_high2")
+          }}</span>
+        </h1>
+        <h2 class="text-xl md:text-2xl text-white/80 mb-8 py-2 md:">
           {{ $t("home.subtitle") }}
         </h2>
         <p class="max-w-2xl mx-auto text-white/70 mb-12">
           {{ $t("home.description") }}
         </p>
-        <div class="flex gap-4 justify-center">
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
           <a
             href="#projekty"
             class="bg-gradient-to-r from-violet-500 to-purple-800 px-6 py-3 rounded-full font-medium"
@@ -48,7 +96,7 @@
           </a>
           <button
             @click="downloadCV"
-            class="bg-gradient-to-r from-fuchsia-900 to-rose-400 px-6 py-3 rounded-full font-medium flex items-center"
+            class="bg-gradient-to-r from-fuchsia-900 to-rose-400 px-6 py-3 rounded-full font-medium flex items-center justify-center"
           >
             <span>{{ $t("home.buttons.downloadCV") }}</span>
             <svg
@@ -122,47 +170,6 @@
   </main>
 </template>
 
-<script setup>
-import { ref, computed, onMounted } from "vue";
-import { useI18n } from "vue-i18n";
-import ProjectScroller from "../components/ProjectScroller.vue";
-import SkillsGrid from "../components/SkillsGrid.vue";
-import AboutMe from "../components/AboutMe.vue";
-import ContactForm from "../components/ContactForm.vue";
-
-// Import danych z JSON
-import projectsData from "../data/projects.json";
-import skillsData from "../data/skills.json";
-
-const { t, locale } = useI18n();
-
-// Dynamiczne pobieranie danych w zależności od języka
-const projects = computed(() => {
-  return projectsData[locale.value] || projectsData.en;
-});
-
-// Umiejętności techniczne
-const technicalSkills = computed(() => skillsData.technical);
-const softSkills = computed(() => skillsData.soft);
-
-// Funkcja do pobierania CV
-const downloadCV = () => {
-  const cvFilename =
-    locale.value === "pl"
-      ? "CV_Marika_Groenke_Kurpios.pdf"
-      : "CV_Marika_Groenke_Kurpios_EN.pdf";
-
-  console.log(`Pobieranie CV: ${cvFilename}`);
-
-  const link = document.createElement("a");
-  link.href = `${import.meta.env.BASE_URL}${cvFilename}`;
-  link.download = cvFilename;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-};
-</script>
-
 <style scoped>
 .grid-pattern {
   width: 100%;
@@ -174,5 +181,54 @@ const downloadCV = () => {
     ),
     linear-gradient(to bottom, rgba(23, 23, 23, 0.5) 1px, transparent 1px);
   background-size: 40px 40px;
+}
+
+/* Gradient dla pierwszego wyróżnionego słowa */
+.gradient-text-pink {
+  font-weight: 600;
+  background-image: linear-gradient(to bottom, #f9a8d4, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+/* Gradient dla drugiego wyróżnionego słowa z animacją "shimmer" */
+.gradient-text-purple {
+  font-weight: 600;
+  background-image: linear-gradient(to bottom, #d8b4fe, #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+  position: relative;
+}
+
+/* Efekt przesuwającego się świetlnego paska */
+.shimmer-effect {
+  background-image: linear-gradient(
+    to right,
+    #8b5cf6 0%,
+    #8b5cf6 40%,
+    #c4b5fd 50%,
+    #8b5cf6 60%,
+    #8b5cf6 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 3s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
 }
 </style>

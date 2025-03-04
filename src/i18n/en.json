@@ -1,0 +1,128 @@
+{
+  "header": {
+    "title": "MariGK",
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact",
+    "skills": "Skills",
+    "description": "Full Stack Software Engineer Portfolio",
+    "lang": "Language"
+  },
+  "projects": {
+    "title": "Projects",
+    "viewProject": "View project",
+    "category": "Category",
+    "technologies": "Technologies",
+    "viewLive": "View live",
+    "viewCode": "View code",
+    "all": "All",
+    "filterBy": "Filter by category",
+    "projectsButton": "All projects",
+    "detailsButton": "Project details"
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact",
+    "skills": "Skills"
+  },
+  "skills": {
+    "title": "Skills",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "database": "Databases",
+    "tools": "Tools",
+    "cloud": "Cloud",
+    "other": "Other",
+    "soft": "Soft skills",
+    "technical": "Technical skills",
+    "languages": "Programming languages",
+    "frameworks": "Frameworks",
+    "design": "Design",
+    "devops": "DevOps",
+    "mobile": "Mobile development",
+    "testing": "Testing",
+    "management": "Management",
+    "collaboration": "Collaboration",
+    "communication": "Communication",
+    "levelBeginner": "Beginner",
+    "levelIntermediate": "Intermediate",
+    "levelAdvanced": "Advanced",
+    "levelExpert": "Expert",
+    "showAll": "Show all",
+    "showLess": "Show less",
+    "levels": {
+      "1": "Basic",
+      "2": "Intermediate",
+      "3": "Advanced",
+      "4": "Expert",
+      "5": "Master"
+    }
+  },
+  "about": {
+    "title": "About me",
+    "content": "I'm a Full Stack Software Engineer with experience in creating comprehensive digital solutions. I work with both front-end and back-end technologies, ensuring high quality at every layer of the application.",
+    "experience": "Experience",
+    "education": "Education",
+    "interests": "Interests",
+    "readMore": "Read more",
+    "showLess": "Show less"
+  },
+  "experience": {
+    "title": "Experience",
+    "years": "years of experience",
+    "projects": "completed projects",
+    "clients": "satisfied clients"
+  },
+  "buttons": {
+    "contactMe": "Contact me",
+    "downloadCV": "Download CV",
+    "viewProjects": "View projects",
+    "learnMore": "Learn more",
+    "hireMeNow": "Hire me now",
+    "seePortfolio": "See portfolio",
+    "readMore": "Read more",
+    "getInTouch": "Get in touch",
+    "sendMessage": "Send message",
+    "submitForm": "Submit form"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "If you have any questions or want to collaborate, please get in touch.",
+    "form": {
+      "name": "Full name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send message",
+      "subject": "Subject"
+    },
+    "success": "Message sent. Thank you!",
+    "error": "Sorry, there was an error. Please try again.",
+    "info": {
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Location"
+    },
+    "buttonSend": "Send"
+  },
+  "footer": {
+    "copyright": "© 2023 Marika Groenke-Kurpios. All rights reserved.",
+    "socialMedia": "Social media"
+  },
+  "home": {
+    "title_p1": "Let's turn your",
+    "title_high1": "ideas",
+    "title_p2": "into digital",
+    "title_high2": "reality",
+    "subtitle": "Marika Groenke-Kurpios - Full Stack Software Engineer",
+    "description": "I create comprehensive web applications, from user interface to database and server infrastructure.",
+    "cta": "View my projects",
+    "buttons": {
+      "projects": "Projects",
+      "downloadCV": "Download CV",
+      "contact": "Contact"
+    }
+  }
+}
