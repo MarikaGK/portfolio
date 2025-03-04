@@ -16,14 +16,16 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 import { useRoute } from "vue-router";
 
 const $route = useRoute();
-const baseUrl = import.meta.env.BASE_URL;
-const componentsLoaded = ref(false);
+const baseUrl = ref("");
 
 onMounted(() => {
+  baseUrl.value = import.meta.env.BASE_URL;
   componentsLoaded.value = true;
 });
+
+const componentsLoaded = ref(false);
 </script>

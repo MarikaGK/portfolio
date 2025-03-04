@@ -8,7 +8,7 @@
         class="project-card bg-black/20 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10"
       >
         <img
-          :src="`${import.meta.env.BASE_URL}${project.image}`"
+          :src="getImageUrl(project.image)"
           :alt="project.title"
           class="w-full h-48 object-cover"
         />
@@ -88,7 +88,7 @@
             >
               <div class="glass-panel overflow-hidden h-[500px] group">
                 <img
-                  :src="`${import.meta.env.BASE_URL}${project.image}`"
+                  :src="getImageUrl(project.image)"
                   :alt="project.title"
                   class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500"
                 />
@@ -126,6 +126,11 @@ const currentProject = computed(() => {
     props.projects[0]
   );
 });
+
+// Dodajemy nową funkcję do obsługi ścieżek do obrazów
+const getImageUrl = (path) => {
+  return import.meta.env.BASE_URL + path;
+};
 
 // Funkcja do określania widocznego projektu podczas scrollowania
 const updateCurrentProject = () => {

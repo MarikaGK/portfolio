@@ -69,7 +69,7 @@
         class="glass-panel overflow-hidden aspect-square rounded-full mx-auto max-w-[300px] relative"
       >
         <img
-          :src="'/portfolio/img/profile.jpg'"
+          :src="getImageUrl('img/profile.jpg')"
           alt="Profile"
           class="w-full h-full object-cover"
           @error="handleImageError"
@@ -86,9 +86,14 @@
 </template>
 
 <script setup>
+// Dodajemy nową funkcję do obsługi ścieżek do obrazów
+const getImageUrl = (path) => {
+  return import.meta.env.BASE_URL + path;
+};
+
 function handleImageError(event) {
   console.warn("Nie można załadować obrazu profilu");
-  event.target.src = "/portfolio/img/profile.JPG";
+  event.target.src = getImageUrl("img/profile.JPG");
 
   event.onerror = function () {
     event.target.src =
