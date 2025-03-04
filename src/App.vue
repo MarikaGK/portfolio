@@ -17,17 +17,15 @@ onMounted(() => {
 </script>
 
 <template>
-  <div id="app">
-    <!-- Sprawdź, czy wszystko jest poprawnie renderowane -->
-    <header>
-      <!-- Navbar -->
-    </header>
-
-    <router-view></router-view>
-
-    <footer>
-      <!-- Footer -->
-    </footer>
+  <div class="app-container">
+    <div class="bg-grid"></div>
+    <Navbar />
+    <router-view v-slot="{ Component }">
+      <transition name="fade" mode="out-in">
+        <component :is="Component" />
+      </transition>
+    </router-view>
+    <Footer />
   </div>
 </template>
 
