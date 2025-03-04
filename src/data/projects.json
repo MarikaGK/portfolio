@@ -27,19 +27,26 @@
   "en": [
     {
       "id": 1,
-      "title": "E-commerce Dashboard",
-      "description": "Modern admin dashboard for e-commerce platform with data analysis and product management.",
-      "tags": ["Vue.js", "Tailwind CSS", "Firebase"],
+      "title": "Squadka.pl",
+      "description": "Modern assistant for managing finances by private users, e.g., class fees, birthday collections, and more.",
+      "tags": [
+        "Vue.js",
+        "Vuetify",
+        "Tailwind CSS",
+        "Pinia",
+        "Express.js",
+        "MongoDB"
+      ],
       "image": "/portfolio/project1.jpg",
-      "link": "#"
+      "link": "https://squadka.pl"
     },
     {
       "id": 2,
-      "title": "Photographer Portfolio",
-      "description": "Minimalist portfolio website for a professional photographer with photo galleries and booking system.",
-      "tags": ["React", "GSAP", "Strapi CMS"],
+      "title": "PairPlay",
+      "description": "An erotic card game for couples that creates new sexual experiences and helps build better relationships.",
+      "tags": ["T3", "Next.js", "Tailwind CSS", "tRPC", "Prisma", "MongoDB"],
       "image": "/portfolio/project2.jpg",
-      "link": "#"
+      "link": "https://pairplay.fun"
     }
   ]
 }

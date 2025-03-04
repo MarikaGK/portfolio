@@ -63,6 +63,7 @@
   },
   "about": {
     "title": "O mnie",
+    "bio": "Jestem frontend developerem z pasją do tworzenia pięknych i funkcjonalnych interfejsów użytkownika. Specjalizuję się w Vue.js i React.",
     "content": "Jestem Full Stack Software Engineer z doświadczeniem w tworzeniu kompleksowych rozwiązań cyfrowych. Pracuję zarówno z technologiami front-endowymi jak i back-endowymi, dbając o wysoką jakość każdej warstwy aplikacji.",
     "experience": "Doświadczenie",
     "education": "Wykształcenie",
@@ -105,14 +106,17 @@
       "phone": "Telefon",
       "address": "Lokalizacja"
     },
-    "buttonSend": "Wyślij"
+    "buttonSend": "Wyślij",
+    "sending": "Wysyłanie..."
   },
   "footer": {
     "copyright": "© 2023 Marika Groenke-Kurpios. Wszelkie prawa zastrzeżone.",
-    "socialMedia": "Media społecznościowe"
+    "socialMedia": "Media społecznościowe",
+    "rights": "Wszelkie prawa zastrzeżone",
+    "made": "Stworzone z"
   },
   "home": {
-    "title_p1": "Przekształćmy Twoje",
+    "title_p1": "Razem przekształcimy Twoje",
     "title_high1": "pomysły",
     "title_p2": "w cyfrową",
     "title_high2": "rzeczywistość",
@@ -120,9 +124,9 @@
     "description": "Tworzę kompleksowe aplikacje webowe, od interfejsu użytkownika po bazę danych i infrastrukturę serwerową.",
     "cta": "Zobacz moje projekty",
     "buttons": {
-      "projects": "Projekty",
+      "projects": "Zobacz moje projekty",
       "downloadCV": "Pobierz CV",
-      "contact": "Kontakt"
+      "contact": "Skontaktuj się"
     }
   }
 }

@@ -1,42 +1,27 @@
-<template>
-  <div
-    class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 py-5 md:py-10"
-  >
-    <div
-      v-for="skill in skills"
-      :key="skill.name"
-      class="glass-panel p-4 flex flex-col items-center"
-    >
-      <div v-if="skill.icon" class="skill-icon-wrapper mb-3">
-        <img
-          :src="getIconUrl(skill.icon)"
-          :alt="skill.name"
-          :class="['w-8 h-8', getIconClass(skill.icon)]"
-          @error="handleImageError"
-        />
-      </div>
-      <h3 class="font-medium mb-2">{{ skill.name }}</h3>
-      <div class="w-full bg-white/10 h-2 rounded-full">
-        <div
-          class="bg-gradient-to-r from-blue-400 to-indigo-500 h-2 rounded-full"
-          :style="{ width: `${skill.level}%` }"
-        ></div>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script setup>
-defineProps({
-  skills: Array,
+import { useI18n } from "vue-i18n";
+
+// Oryginalnie SkillsGrid prawdopodobnie oczekuje props 'skills'
+// a teraz wysyłamy 'technicalSkills' i 'softSkills'
+const props = defineProps({
+  technicalSkills: {
+    type: Array,
+    required: true,
+  },
+  softSkills: {
+    type: Array,
+    required: true,
+  },
 });
 
 // Mapa przekształcająca potencjalnie problematyczne nazwy ikon na prawidłowe identyfikatory
 const iconMapping = {
   vue: "vuejs",
-  nodejs: "nodedotjs",
-  database: "postgresql", // Zastępujemy ogólną "database" konkretną bazą danych
-  pinia: "vuejs", // Brak ikony pinia, używamy Vue jako zamiennika
+  nodejs: "nodejs",
+  database: "database",
+  mongodb: "mongodb",
+  sql: "mysql",
+  pinia: "vuejs",
   js: "javascript",
   ts: "typescript",
   react: "react",
@@ -56,6 +41,13 @@ const specialIcons = {
   css3: true,
 };
 
+// Obsługa specjalnych przypadków dla konkretnych technologii
+const specialIconFormats = {
+  nodejs: "plain-wordmark", // Node.js używa plain-wordmark, który pokaże logo z tekstem
+  mongodb: "plain-wordmark", // MongoDB również wygląda lepiej z tekstem
+  sql: "plain-wordmark", // SQL (MySQL) również z tekstem
+};
+
 // Funkcja określająca klasę CSS dla ikony
 function getIconClass(icon) {
   const iconName = icon.toLowerCase();
@@ -72,15 +64,16 @@ function getIconClass(icon) {
 // Funkcja pobierająca prawidłowy URL dla ikony
 function getIconUrl(icon) {
   // Sprawdź czy mamy mapowanie dla tej ikony
-  const mappedIcon = (iconMapping[icon.toLowerCase()] || icon).toLowerCase();
+  const iconName = icon.toLowerCase();
+  const mappedIcon = (iconMapping[iconName] || iconName).toLowerCase();
 
-  // Dla specjalnych ikon używamy wariantu 'plain'
-  if (specialIcons[mappedIcon]) {
-    return `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${mappedIcon}/${mappedIcon}-plain.svg`;
-  }
+  // Sprawdź, czy mamy specjalny format dla tej ikony
+  const format =
+    specialIconFormats[iconName] ||
+    (specialIcons[mappedIcon] ? "plain" : "original");
 
-  // Użyj CDN DevIcons zamiast SimpleIcons, który jest bardziej niezawodny
-  return `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${mappedIcon}/${mappedIcon}-original.svg`;
+  // Użyj CDN DevIcons z odpowiednim formatem
+  return `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${mappedIcon}/${mappedIcon}-${format}.svg`;
 }
 
 // Używamy emoji jako zastępnika ikony zamiast zewnętrznego obrazu
@@ -103,7 +96,72 @@ function handleImageError(event) {
   // Ukrywamy błędy w konsoli
   event.onerror = null;
 }
+
+// Dodajemy dostęp do aktualnego języka
+const { locale } = useI18n();
 </script>
+
+<template>
+  <div class="mb-12">
+    <h3 class="text-2xl font-semibold mb-6 text-center text-white/90">
+      {{ $t("skills.technical") }}
+    </h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+      <div
+        v-for="skill in technicalSkills"
+        :key="skill.name"
+        class="skill-card bg-black/30 backdrop-blur-sm border border-white/10 p-4 rounded-lg text-center"
+      >
+        <div class="skill-icon-wrapper mb-3 flex justify-center items-center">
+          <img
+            :src="getIconUrl(skill.icon)"
+            :alt="skill.name"
+            class="w-8 h-8 mx-auto"
+            :class="getIconClass(skill.icon)"
+            @error="handleImageError"
+          />
+        </div>
+        <h4 class="text-lg font-medium">{{ skill.name }}</h4>
+
+        <div class="w-full bg-white/10 h-2 rounded-full mt-2">
+          <div
+            class="bg-gradient-to-r from-purple-400 to-pink-600 h-2 rounded-full"
+            :style="{ width: `${skill.level}%` }"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h3 class="text-2xl font-semibold mb-6 text-center text-white/90">
+      {{ $t("skills.soft") }}
+    </h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+      <div
+        v-for="skill in softSkills"
+        :key="typeof skill.name === 'object' ? skill.name.en : skill.name"
+        class="skill-card bg-black/30 backdrop-blur-sm border border-white/10 p-4 rounded-lg text-center"
+      >
+        <!-- Używamy odpowiedniej wersji językowej dla nazwy umiejętności -->
+        <h4 class="text-lg font-medium mb-2">
+          {{
+            typeof skill.name === "object"
+              ? skill.name[locale] || skill.name.en
+              : skill.name
+          }}
+        </h4>
+
+        <div class="w-full bg-white/10 h-2 rounded-full mt-2">
+          <div
+            class="bg-gradient-to-r from-rose-300 to-purple-600 h-2 rounded-full"
+            :style="{ width: `${skill.level}%` }"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
 
 <style scoped>
 .white-icon {

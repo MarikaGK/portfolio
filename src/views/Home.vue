@@ -5,7 +5,6 @@ import ProjectScroller from "../components/ProjectScroller.vue";
 import SkillsGrid from "../components/SkillsGrid.vue";
 import AboutMe from "../components/AboutMe.vue";
 import ContactForm from "../components/ContactForm.vue";
-import DebugInfo from "../components/DebugInfo.vue";
 
 // Import danych z JSON
 import projectsData from "../data/projects.json";
@@ -29,8 +28,6 @@ const downloadCV = () => {
       ? "CV_Marika_Groenke_Kurpios.pdf"
       : "CV_Marika_Groenke_Kurpios_EN.pdf";
 
-  console.log(`Pobieranie CV: ${cvFilename}`);
-
   const link = document.createElement("a");
   link.href = `${import.meta.env.BASE_URL}${cvFilename}`;
   link.download = cvFilename;
@@ -42,7 +39,7 @@ const downloadCV = () => {
 
 <template>
   <main>
-    <DebugInfo />
+    <!-- Sekcja 1: Home / Hero -->
     <section
       id="home"
       class="min-h-screen flex items-center justify-center relative overflow-hidden"
@@ -126,46 +123,45 @@ const downloadCV = () => {
       </div>
     </section>
 
+    <!-- Sekcja 2: Projekty (przywracamy jako drugą sekcję) -->
     <section id="projekty" class="py-20">
       <div class="container mx-auto px-4">
-        <h2 class="section-heading">{{ $t("projects.title") }}</h2>
-
-        <div class="project-scroll-container relative">
-          <ProjectScroller :projects="projects" />
-        </div>
+        <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">
+          {{ $t("projects.title") }}
+        </h2>
+        <ProjectScroller :projects="projects" />
       </div>
     </section>
 
-    <section id="umiejetnosci" class="section">
+    <!-- Sekcja 3: Umiejętności -->
+    <section id="umiejetnosci" class="py-20 bg-black/20">
       <div class="container mx-auto px-4">
-        <h2 class="section-heading">{{ $t("skills.title") }}</h2>
-
-        <div class="mb-12">
-          <h3 class="text-2xl font-semibold mb-6 text-center text-white/90">
-            {{ $t("skills.technical") }}
-          </h3>
-          <SkillsGrid :skills="technicalSkills" />
-        </div>
-
-        <div>
-          <h3 class="text-2xl font-semibold mb-6 text-center text-white/90">
-            {{ $t("skills.soft") }}
-          </h3>
-          <SkillsGrid :skills="softSkills" />
-        </div>
+        <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">
+          {{ $t("skills.title") }}
+        </h2>
+        <SkillsGrid
+          :technicalSkills="technicalSkills"
+          :softSkills="softSkills"
+        />
       </div>
     </section>
 
-    <section id="o-mnie" class="section">
+    <!-- Sekcja 4: O mnie (przywracamy jako czwartą sekcję) -->
+    <section id="omnie" class="py-20">
       <div class="container mx-auto px-4">
-        <h2 class="section-heading">{{ $t("about.title") }}</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">
+          {{ $t("about.title") }}
+        </h2>
         <AboutMe />
       </div>
     </section>
 
-    <section id="kontakt" class="section">
+    <!-- Sekcja 5: Kontakt -->
+    <section id="kontakt" class="py-20 bg-black/20">
       <div class="container mx-auto px-4">
-        <h2 class="section-heading">{{ $t("contact.title") }}</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">
+          {{ $t("contact.title") }}
+        </h2>
         <ContactForm />
       </div>
     </section>

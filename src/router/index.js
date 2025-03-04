@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "../views/Home.vue";
 
 // Jeśli plik routes.js faktycznie istnieje i chcesz go używać,
@@ -9,6 +9,10 @@ import Home from "../views/Home.vue";
 // usuń ten import
 // import routes from "./routes";
 
+// Używaj stałej dla bazowego URL
+const BASE_URL = ""; // Pusty dla hash history
+
+// Definiujemy trasy bezpośrednio tutaj, bez mieszania z importem
 const routes = [
   {
     path: "/",
@@ -18,8 +22,9 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes, // używamy lokalnie zdefiniowanej tablicy routes
+  // Dla HashHistory, nie używamy BASE_URL, ponieważ # obsługuje routing po stronie klienta
+  history: createWebHashHistory(),
+  routes,
   scrollBehavior() {
     return { top: 0 };
   },

@@ -109,7 +109,9 @@
   },
   "footer": {
     "copyright": "© 2023 Marika Groenke-Kurpios. All rights reserved.",
-    "socialMedia": "Social media"
+    "socialMedia": "Social media",
+    "rights": "All rights reserved",
+    "made": "Made with"
   },
   "home": {
     "title_p1": "Let's turn your",
@@ -120,9 +122,9 @@
     "description": "I create comprehensive web applications, from user interface to database and server infrastructure.",
     "cta": "View my projects",
     "buttons": {
-      "projects": "Projects",
+      "projects": "View my projects",
       "downloadCV": "Download CV",
-      "contact": "Contact"
+      "contact": "Contact me"
     }
   }
 }
